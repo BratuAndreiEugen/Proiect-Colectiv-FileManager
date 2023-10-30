@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "5SfJLbwGBeAPhCjsk/IjRhCGp9us1Sl2Jf1OjXVSWdH6sDbGtzfeT/V85sX8dfN/nyk7e0E2qmhcc0z/Bj1PIQ==",
+  "success": true,
+  "projectFilePath": "C:\\Proiecte SSD\\Proiect Colectiv\\fileAPI\\fileAPI.Infrastructure\\fileAPI.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AndreiB\\.nuget\\packages\\awssdk.core\\3.7.204.10\\awssdk.core.3.7.204.10.nupkg.sha512",
+    "C:\\Users\\AndreiB\\.nuget\\packages\\awssdk.s3\\3.7.205.19\\awssdk.s3.3.7.205.19.nupkg.sha512",
+    "C:\\Users\\AndreiB\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\AndreiB\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\AndreiB\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\microsoft.extensions.options.7.0.1.nupkg.sha512",
+    "C:\\Users\\AndreiB\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\AndreiB\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
+    "C:\\Users\\AndreiB\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
