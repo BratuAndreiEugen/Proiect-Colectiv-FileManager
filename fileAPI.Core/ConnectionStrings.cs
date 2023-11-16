@@ -9,5 +9,8 @@ namespace fileAPI.Core
     public class ConnectionStrings
     {
         public string S3Storage { get; set; }
+
+        public string AWSDb {  get; set; }
+
     }
 }
