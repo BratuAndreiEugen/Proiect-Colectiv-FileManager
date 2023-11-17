@@ -21,6 +21,19 @@ namespace fileAPI.Infrastructure
             _connectionStrings = connectionStrings.Value;
         }
 
+        public async Task<IEnumerable<FileEntry>> GetAllForRecipe(int recipeId)
+        {
+            using( var context = _contextFactory.CreateDbContext() )
+            {
+                var files = context.Files.ToList();
+
+                await context.DisposeAsync();
+
+
+                return files;
+            }
+        }
+
         public async Task Save(FileEntry entry)
         {
             using (var context = _contextFactory.CreateDbContext())

@@ -10,5 +10,8 @@ namespace fileAPI.Infrastructure
     public interface IFileRepository
     {
         public Task Save(FileEntry entry);
+
+        public Task<IEnumerable<FileEntry>> GetAllForRecipe(int recipeId);
+
     }
 }

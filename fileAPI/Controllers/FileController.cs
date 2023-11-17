@@ -83,6 +83,27 @@ namespace fileAPI.Web.Controllers
 
         }
 
+        /// <summary>
+        /// Endpoint that delivers all the extra photos for a recipe
+        /// </summary>
+        /// <param name="recipe_id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [EnableCors]
+        [Route("photos/{recipe_id}")]
+        public async Task<IActionResult> GetAllForRecipe(int recipe_id)
+        {
+            try
+            {
+                var files = await _fileRepository.GetAllForRecipe(recipe_id);
+
+                return Ok(files);
+            }catch (Exception ex)
+            {
+                return BadRequest(ex.Message + " " + ex.InnerException.Message);
+            }
+        }
+
 
 
     }
