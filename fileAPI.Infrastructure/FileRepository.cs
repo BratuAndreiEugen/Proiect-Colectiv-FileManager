@@ -25,7 +25,7 @@ namespace fileAPI.Infrastructure
         {
             using( var context = _contextFactory.CreateDbContext() )
             {
-                var files = context.Files.ToList();
+                var files = context.Files.Where(file => file.RecipeId == recipeId).ToList();
 
                 await context.DisposeAsync();
 
