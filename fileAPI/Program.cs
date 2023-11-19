@@ -1,6 +1,7 @@
 using fileAPI.Core;
 using fileAPI.Infrastructure;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,9 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
 
 
 // Add services to the container.
+builder.Services.AddDbContextFactory<FileContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("AWSDb")));
+
+
 
 builder.Services.AddOptions();
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
@@ -32,6 +36,7 @@ builder.Services.Configure<FormOptions>(options =>
 });
 
 builder.Services.AddScoped<IS3StorageHandler, S3StorageHandler>();
+builder.Services.AddScoped<IFileRepository, FileRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -47,12 +52,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAll");
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors("AllowAll");
-
 app.Run();
+
+
