@@ -3858,11 +3858,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Proiecte SSD\\Proiect Colectiv\\fileAPI\\fileAPI\\fileAPI.Web.csproj",
+      "projectUniqueName": "C:\\Proiecte SSD\\Proiect Colectiv\\Proiect-Colectiv-FileManager\\fileAPI\\fileAPI.Web.csproj",
       "projectName": "fileAPI.Web",
-      "projectPath": "C:\\Proiecte SSD\\Proiect Colectiv\\fileAPI\\fileAPI\\fileAPI.Web.csproj",
+      "projectPath": "C:\\Proiecte SSD\\Proiect Colectiv\\Proiect-Colectiv-FileManager\\fileAPI\\fileAPI.Web.csproj",
       "packagesPath": "C:\\Users\\AndreiB\\.nuget\\packages\\",
-      "outputPath": "C:\\Proiecte SSD\\Proiect Colectiv\\fileAPI\\fileAPI\\obj\\",
+      "outputPath": "C:\\Proiecte SSD\\Proiect Colectiv\\Proiect-Colectiv-FileManager\\fileAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -3885,8 +3885,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Proiecte SSD\\Proiect Colectiv\\fileAPI\\fileAPI.Infrastructure\\fileAPI.Infrastructure.csproj": {
-              "projectPath": "C:\\Proiecte SSD\\Proiect Colectiv\\fileAPI\\fileAPI.Infrastructure\\fileAPI.Infrastructure.csproj"
+            "C:\\Proiecte SSD\\Proiect Colectiv\\Proiect-Colectiv-FileManager\\fileAPI.Infrastructure\\fileAPI.Infrastructure.csproj": {
+              "projectPath": "C:\\Proiecte SSD\\Proiect Colectiv\\Proiect-Colectiv-FileManager\\fileAPI.Infrastructure\\fileAPI.Infrastructure.csproj"
             }
           }
         }
@@ -3933,7 +3933,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

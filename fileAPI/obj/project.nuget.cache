@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DIgtwK3R/ZqjJSOsyWLAQWAESoe9s5KIFW7K6j8DZhw6WLiZkT2ugYFmfDro6uqPzDG3qu35hfLEU3eXW5KKlw==",
+  "dgSpecHash": "RYEvkq16momn68tdhNa3GJpzr5cVgC2kQbDJUilG6R+mU7F2trt3pYvuUmOphCBOdm1zq7eIFvTRulqzHPrCYA==",
   "success": true,
-  "projectFilePath": "C:\\Proiecte SSD\\Proiect Colectiv\\fileAPI\\fileAPI\\fileAPI.Web.csproj",
+  "projectFilePath": "C:\\Proiecte SSD\\Proiect Colectiv\\Proiect-Colectiv-FileManager\\fileAPI\\fileAPI.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AndreiB\\.nuget\\packages\\awssdk.core\\3.7.204.10\\awssdk.core.3.7.204.10.nupkg.sha512",
     "C:\\Users\\AndreiB\\.nuget\\packages\\awssdk.s3\\3.7.205.19\\awssdk.s3.3.7.205.19.nupkg.sha512",

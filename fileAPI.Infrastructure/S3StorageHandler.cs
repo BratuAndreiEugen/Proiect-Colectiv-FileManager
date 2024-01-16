@@ -28,10 +28,10 @@ namespace fileAPI.Infrastructure
         {
             // Create an S3 client as shown in the previous answer.
             var awsCredentials = new Amazon.Runtime.BasicAWSCredentials(_appSettings.AWSAccessKey,  _appSettings.AWSSecretKey);
-            var s3Client = new Amazon.S3.AmazonS3Client(awsCredentials, Amazon.RegionEndpoint.EUNorth1);
+            var s3Client = new Amazon.S3.AmazonS3Client(awsCredentials, Amazon.RegionEndpoint.EUCentral1);
 
             // Specify the S3 bucket and object key where you want to store the image.
-            string bucketName = "baxbaniibucket";
+            string bucketName = "baxbaniibucketv2";
             string objectKey = "content/" + Guid.NewGuid() + Path.GetExtension(file.FileName);
 
             using (var stream = file.OpenReadStream())
