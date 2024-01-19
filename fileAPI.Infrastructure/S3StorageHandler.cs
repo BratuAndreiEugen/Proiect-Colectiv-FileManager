@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
@@ -24,10 +25,57 @@ namespace fileAPI.Infrastructure
             _appSettings = appSettings.Value;
         }
 
+
+        private async Task<string> DecryptString(string cipherText, string keyStr)
+        {
+
+            byte[] key = Convert.FromBase64String(keyStr);
+            using (Aes aesAlg = Aes.Create())
+            {
+                // Use 128 bits (16 bytes) for the key size
+                aesAlg.KeySize = 256;
+                aesAlg.Key = key;
+                aesAlg.IV = new byte[16]; // Use a better IV (Initialization Vector) in a production scenario
+
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+
+                //cipherText = cipherText.Replace('-', '+').Replace('_', '/');
+
+                //// Padding with '=' if needed
+                //int mod4 = cipherText.Length % 4;
+                //if (mod4 > 0)
+                //{
+                //    cipherText += new string('=', 4 - mod4);
+                //}
+
+                byte[] cipherBytes = Convert.FromBase64String(cipherText);
+                using (MemoryStream msDecrypt = new MemoryStream(cipherBytes))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            return srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+
         public async Task<string> UploadToStorage(IFormFile file)
         {
+
+            // Un-hash acces and secret key
+            string AWSAccessKey = await DecryptString(_appSettings.AWSAccessKey, _appSettings.CryptKey);
+            Console.WriteLine(AWSAccessKey);
+            string AWSSecretKey = await DecryptString(_appSettings.AWSSecretKey, _appSettings.CryptKey);
+            Console.WriteLine(AWSSecretKey);
+
             // Create an S3 client as shown in the previous answer.
-            var awsCredentials = new Amazon.Runtime.BasicAWSCredentials(_appSettings.AWSAccessKey,  _appSettings.AWSSecretKey);
+            var awsCredentials = new Amazon.Runtime.BasicAWSCredentials(AWSAccessKey,  AWSSecretKey);
             var s3Client = new Amazon.S3.AmazonS3Client(awsCredentials, Amazon.RegionEndpoint.EUCentral1);
 
             // Specify the S3 bucket and object key where you want to store the image.

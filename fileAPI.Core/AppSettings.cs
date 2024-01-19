@@ -12,5 +12,7 @@ namespace fileAPI.Core
 
         public string AWSSecretKey { get; set; }
 
+        public string CryptKey { get; set; }
+
     }
 }
